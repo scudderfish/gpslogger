@@ -9,6 +9,9 @@
 		<CheckBoxPreference android:key="log_kml"
 			android:summary="@string/log_kml_summary" android:title="@string/log_kml_title" />
 
+		<CheckBoxPreference android:key="log_url"
+			android:summary="@string/log_url_summary" android:title="@string/log_url_title" />
+
 		<CheckBoxPreference android:key="satellite_time"
 			android:summary="@string/satellite_time_summary" android:title="@string/satellite_time_title"
 			android:defaultValue="false" />
@@ -41,13 +44,19 @@
 			android:defaultValue="true" />
 		<Preference android:title="@string/autoemail_title"
 			android:summary="@string/autoemail_summary" android:key="autoemail_setup">
-			<intent android:action="com.mendhak.gpslogger.AUTOEMAIL_SETUP" />
+			<intent android:action="uk.org.radmee.gpslogger.AUTOEMAIL_SETUP" />
 		</Preference>
 
 		<Preference android:title="@string/osm_setup_title"
 			android:summary="@string/osm_setup_summary" android:key="osm_setup">
-			<intent android:action="com.mendhak.gpslogger.OSM_SETUP" /> 
+			<intent android:action="uk.org.radmee.gpslogger.OSM_SETUP" /> 
 		</Preference> 
+		
+		<Preference android:title="@string/url_setprefs"
+			android:summary="@string/url_setprefs_summary" android:key="url_setup">
+			<intent android:action="uk.org.radmee.gpslogger.URL_SETUP" /> 
+		</Preference> 
+		
 		<CheckBoxPreference android:title="@string/startonbootup_title"
 			android:summary="@string/startonbootup_summary" android:key="startonbootup" />
 		<CheckBoxPreference android:title="@string/useimperial_title"

@@ -133,6 +133,8 @@
     <string name="log_gpx_summary">Creates a GPX file in the GPSLogger folder on the SD card.</string>
     <string name="log_kml_title">Log to KML</string>
     <string name="log_kml_summary">Creates a KML file in the GPSLogger folder on the SD card.</string>
+    <string name="log_url_title">Log to URL</string>
+    <string name="log_url_summary">Sends location information to a custom URL</string>
     <string name="satellite_time_title">Use satellite time</string>
     <string name="satellite_time_summary">Use satellite time instead of local phone time, it\'s more accurate.</string>
     <string name="new_file_creation_title">New file creation</string>
@@ -256,4 +258,9 @@
     
     <string name="no_files_found">No files found, nothing to share or upload.</string>
     <string name="osm_pick_file">Pick a file to upload</string>
+
+	<string name="url_setprefs">Custom URL preferences</string>
+	<string name="url_setprefs_summary">The custom URL to send location information to</string>
+	<string name="url_location">Custom URL</string>
+	<string name="url_location_summary">Set the custom URL</string>
 </resources>

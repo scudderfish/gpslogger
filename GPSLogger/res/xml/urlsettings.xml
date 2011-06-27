@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" android:key="url_preferences">
+  
+ 
+	 <Preference android:key="url_setprefs" android:summary="@string/url_setprefs_summary" 
+	 	android:title="@string/url_setprefs"></Preference>
+ 
+ 	<EditTextPreference android:key="url_location"
+		android:title="@string/url_location"
+		android:summary="@string/url_location_summary"
+		android:dialogTitle="@string/url_location" />
+			
+  
+</PreferenceScreen>
