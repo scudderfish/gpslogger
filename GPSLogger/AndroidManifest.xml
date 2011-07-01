@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="uk.org.radmee.gpslogger" android:versionCode="12"
-	android:versionName="1.1.2">
-	<application android:icon="@drawable/gpsloggericon2"
+	package="uk.org.radmee.whereisrobbie" android:versionCode="2"
+	android:versionName="2.0">
+	<application android:icon="@drawable/icon"
 		android:name="@string/app_name" android:label="@string/app_name"
 		android:debuggable="true">
 
- 	<service android:name="uk.org.radmee.gpslogger.GpsLoggingService">
+ 	<service android:name="uk.org.radmee.whereisrobbie.GpsLoggingService">
             <intent-filter>
-                <action android:name="uk.org.radmee.gpslogger.GpsLoggingService" />
+                <action android:name="uk.org.radmee.whereisrobbie.GpsLoggingService" />
             </intent-filter>
          </service>
-		<activity android:name="uk.org.radmee.gpslogger.GpsMainActivity"
+		<activity android:name="uk.org.radmee.whereisrobbie.GpsMainActivity"
 			android:label="@string/app_name" android:screenOrientation="portrait"
 			android:launchMode="singleTask" android:configChanges="locale">
 			<intent-filter>
@@ -21,9 +21,9 @@
 		</activity>
 
 		<activity android:label="@string/osm_preferences_title"
-			android:name="uk.org.radmee.gpslogger.senders.osm.OSMSettingsActivity">
+			android:name="uk.org.radmee.whereisrobbie.senders.osm.OSMSettingsActivity">
 			<intent-filter>
-				<action android:name="uk.org.radmee.gpslogger.OSM_SETUP" />
+				<action android:name="uk.org.radmee.whereisrobbie.OSM_SETUP" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<!-- <category android:name="android.intent.category.BROWSABLE" /> <data 
 					android:scheme="gpslogger" android:host="authorize" /> -->
@@ -31,17 +31,17 @@
 		</activity>
 
 		<activity android:label="@string/url_setprefs"
-			android:name="uk.org.radmee.gpslogger.senders.url.URLSettingsActivity">
+			android:name="uk.org.radmee.whereisrobbie.senders.url.URLSettingsActivity">
 			<intent-filter>
-				<action android:name="uk.org.radmee.gpslogger.URL_SETUP" />
+				<action android:name="uk.org.radmee.whereisrobbie.URL_SETUP" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
 
 		<activity android:label="@string/osm_preferences_title"
-			android:name="uk.org.radmee.gpslogger.senders.osm.OSMAuthorizationActivity">
+			android:name="uk.org.radmee.whereisrobbie.senders.osm.OSMAuthorizationActivity">
 			<intent-filter>
-				<action android:name="uk.org.radmee.gpslogger.OSM_AUTHORIZE" />
+				<action android:name="uk.org.radmee.whereisrobbie.OSM_AUTHORIZE" />
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
@@ -49,12 +49,12 @@
 			</intent-filter>
 		</activity>
 
-		<activity android:name="uk.org.radmee.gpslogger.GpsSettingsActivity"
+		<activity android:name="uk.org.radmee.whereisrobbie.GpsSettingsActivity"
 			android:label="@string/settings_screen_name"
 			android:screenOrientation="portrait">
 		</activity>
 
-       <activity android:name="uk.org.radmee.gpslogger.senders.email.AutoEmailActivity"
+       <activity android:name="uk.org.radmee.whereisrobbie.senders.email.AutoEmailActivity"
             android:label="@string/autoemail_title" android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -63,7 +63,7 @@
          </activity>
  
 		<receiver android:enabled="true"
-			android:name="uk.org.radmee.gpslogger.StartupReceiver.permission.RECEIVE_BOOT_COMPLETED">
+			android:name="uk.org.radmee.whereisrobbie.StartupReceiver.permission.RECEIVE_BOOT_COMPLETED">
 
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -72,7 +72,7 @@
 
 		</receiver>
 
-     <receiver android:name="uk.org.radmee.gpslogger.senders.AlarmReceiver"></receiver>
+     <receiver android:name="uk.org.radmee.whereisrobbie.senders.AlarmReceiver"></receiver>
    </application>
    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>

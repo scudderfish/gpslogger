@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GPSLogger</string>
-    <string name="settings_screen_name">GPSLogger Settings</string>
+    <string name="app_name">WhereIsRobbie</string>
+    <string name="settings_screen_name">WhereIsRobbie Settings</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="could_not_write_to_file">Could not write to file </string>
@@ -35,8 +35,8 @@
     <string name="btn_stop_logging">Stop Logging</string>
     
     <string name="button_click_error">Button click error: </string>
-    <string name="gpslogger_still_running">GPSLogger is still running.</string>
-    <string name="toast_gpslogger_stillrunning">GPSLogger is still running. You can exit the application from the menu options.</string>
+    <string name="gpslogger_still_running">WhereIsRobbie is still running.</string>
+    <string name="toast_gpslogger_stillrunning">WhereIsRobbie is still running. You can exit the application from the menu options.</string>
     <string name="summary_loggingto">Logging to:</string>
     <string name="summary_loggingto_screen">screen only</string>
     <string name="summary_loggingto_both">Both GPX and KML</string>

@@ -9,7 +9,8 @@
  	<EditTextPreference android:key="url_location"
 		android:title="@string/url_location"
 		android:summary="@string/url_location_summary"
-		android:dialogTitle="@string/url_location" />
+		android:dialogTitle="@string/url_location"
+		android:defaultValue="http://&lt;host&gt;/cgi-bin/mapupdate?action=update&amp;lat=%1$f&amp;long=%2$f&amp;alt=%3$f&amp;track=%4$f&amp;speed=%5$f&amp;accuracy=%6$f" />
 			
   
 </PreferenceScreen>
