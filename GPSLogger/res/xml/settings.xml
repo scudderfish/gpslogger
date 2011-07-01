@@ -44,7 +44,7 @@
 			android:defaultValue="true" />
 		<Preference android:title="@string/autoemail_title"
 			android:summary="@string/autoemail_summary" android:key="autoemail_setup">
-			<intent android:action="uk.org.radmee.gpslogger.AUTOEMAIL_SETUP" />
+			<intent android:action="uk.org.radmee.whereisrobbie.AUTOEMAIL_SETUP" />
 		</Preference>
 
 		<Preference android:title="@string/osm_setup_title"
