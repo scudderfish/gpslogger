@@ -26,6 +26,7 @@ public class AppSettings extends Application
 	private static String smtpPassword;
 	private static String autoEmailTarget;
 	private static boolean smtpSsl;
+	private static String customURL;
 
 	
 
@@ -320,6 +321,16 @@ public class AppSettings extends Application
 	public static void setLogToURL(boolean logToURL)
 	{
 		AppSettings.logToURL = logToURL;
+	}
+
+	public static void setCustomURL(String customURL)
+	{
+		AppSettings.customURL = customURL;
+	}
+
+	public static String getCustomURL()
+	{
+		return customURL;
 	}
 
 

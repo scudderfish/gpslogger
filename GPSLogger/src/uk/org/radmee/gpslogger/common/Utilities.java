@@ -102,6 +102,8 @@ public class Utilities
 		AppSettings.setLogToKml(prefs.getBoolean("log_kml", false));
 
 		AppSettings.setLogToGpx(prefs.getBoolean("log_gpx", false));
+		
+		AppSettings.setLogToURL(prefs.getBoolean("log_url", false));
 
 		AppSettings.setShowInNotificationBar(prefs.getBoolean("show_notification", true));
 
@@ -163,6 +165,7 @@ public class Utilities
 		AppSettings.setSmtpUsername(prefs.getString("smtp_username", ""));
 		AppSettings.setSmtpPassword(prefs.getString("smtp_password", ""));
 		AppSettings.setAutoEmailTarget(prefs.getString("autoemail_target", ""));
+		AppSettings.setCustomURL(prefs.getString("url_location", ""));
 	}
 	
 

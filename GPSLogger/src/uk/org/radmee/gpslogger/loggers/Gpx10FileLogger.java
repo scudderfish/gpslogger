@@ -52,8 +52,16 @@ class Gpx10FileLogger implements IFileLogger
 				BufferedOutputStream initialOutput = new BufferedOutputStream(initialWriter);
 
 				String initialXml = "<?xml version=\"1.0\"?>"
-						+ "<gpx version=\"1.0\" creator=\"GPSLogger - http://gpslogger.mendhak.com/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.topografix.com/GPX/1/0\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd\">"
-						+ "<time>" + dateTimeString + "</time>" + "<bounds />" + "<trk></trk></gpx>";
+						+ "<gpx version=\"1.0\" creator=\"GPSLogger - http://gpslogger.mendhak.com/\" " +
+								"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
+								"xmlns=\"http://www.topografix.com/GPX/1/0\" " +
+								"xsi:schemaLocation=\"http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd\">"
+						+ "<time>" + dateTimeString + "</time>" + "<bounds />" + "<trk>";
+				if(addNewTrackSegment)
+				{
+					initialXml = initialXml+"<trkseg></trkseg>";
+				}
+				initialXml = initialXml +"</trk></gpx>";
 				initialOutput.write(initialXml.getBytes());
 				// initialOutput.write("\n".getBytes());
 				initialOutput.flush();
