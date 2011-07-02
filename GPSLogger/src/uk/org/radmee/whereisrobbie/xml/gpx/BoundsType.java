@@ -16,13 +16,13 @@ import org.simpleframework.xml.Element;
 public class BoundsType
 {
 
-	@Attribute(required = true)
+	@Attribute(required = false)
 	protected BigDecimal	minlat;
-	@Attribute(required = true)
+	@Attribute(required = false)
 	protected BigDecimal	minlon;
-	@Attribute(required = true)
+	@Attribute(required = false)
 	protected BigDecimal	maxlat;
-	@Attribute(required = true)
+	@Attribute(required = false)
 	protected BigDecimal	maxlon;
 
 	public BigDecimal getMinlat()

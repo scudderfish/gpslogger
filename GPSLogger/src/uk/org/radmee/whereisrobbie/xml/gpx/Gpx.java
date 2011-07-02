@@ -7,33 +7,46 @@
 
 package uk.org.radmee.whereisrobbie.xml.gpx;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Default;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 @Root(name = "gpx", strict = false)
+@Default
 public class Gpx
 {
 
-	protected String		name;
-	protected String		desc;
-	protected String		author;
-	protected String		email;
-	protected String		url;
-	protected String		urlname;
-	protected Date			time;
-	protected String		keywords;
-	protected BoundsType	bounds;
+    @Element(required=false)
+    protected String		name;
+    @Element(required=false)
+    protected String		desc;
+    @Element(required=false)
+    protected String		author;
+    @Element(required=false)
+    protected String		email;
+    @Element(required=false)
+    protected String		url;
+    @Element(required=false)
+    protected String		urlname;
+	@Element(required=false)
+	protected String			time;
+	@Element(required=false)
+    protected String		keywords;
+	@Element(required=false)
+    protected BoundsType	bounds;
+	@ElementList(required=false)
 	protected List<Gpx.Wpt>	wpt;
+	@ElementList(required=false)
 	protected List<Gpx.Rte>	rte;
+	@ElementList(inline=true,required=false)
 	protected List<Gpx.Trk>	trk;
-	@Element(required = true)
+	@Attribute(required = true)
 	protected String		version;
 	@Attribute(required = true)
 	protected String		creator;
@@ -98,12 +111,12 @@ public class Gpx
 		this.urlname = value;
 	}
 
-	public Date getTime()
+	public String getTime()
 	{
 		return time;
 	}
 
-	public void setTime(Date value)
+	public void setTime(String value)
 	{
 		this.time = value;
 	}
@@ -191,7 +204,7 @@ public class Gpx
 		protected String				src;
 		protected String				url;
 		protected String				urlname;
-		protected BigInteger			number;
+		protected Integer			number;
 		protected List<Gpx.Rte.Rtept>	rtept;
 
 		public String getName()
@@ -254,12 +267,12 @@ public class Gpx
 			this.urlname = value;
 		}
 
-		public BigInteger getNumber()
+		public Integer getNumber()
 		{
 			return number;
 		}
 
-		public void setNumber(BigInteger value)
+		public void setNumber(Integer value)
 		{
 			this.number = value;
 		}
@@ -276,10 +289,10 @@ public class Gpx
 		public static class Rtept
 		{
 
-			protected BigDecimal	ele;
-			protected Date			time;
-			protected BigDecimal	magvar;
-			protected BigDecimal	geoidheight;
+			protected Double	ele;
+			protected String	time;
+			protected Double	magvar;
+			protected Double	geoidheight;
 			protected String		name;
 			protected String		cmt;
 			protected String		desc;
@@ -289,53 +302,53 @@ public class Gpx
 			protected String		sym;
 			protected String		type;
 			protected String		fix;
-			protected BigInteger	sat;
-			protected BigDecimal	hdop;
-			protected BigDecimal	vdop;
-			protected BigDecimal	pdop;
-			protected BigDecimal	ageofdgpsdata;
+			protected Integer	sat;
+			protected Double	hdop;
+			protected Double	vdop;
+			protected Double	pdop;
+			protected Double	ageofdgpsdata;
 			protected Integer		dgpsid;
 			@Attribute(required = true)
-			protected BigDecimal	lat;
+			protected Double	lat;
 			@Attribute(required = true)
-			protected BigDecimal	lon;
+			protected Double	lon;
 
-			public BigDecimal getEle()
+			public Double getEle()
 			{
 				return ele;
 			}
 
-			public void setEle(BigDecimal value)
+			public void setEle(Double value)
 			{
 				this.ele = value;
 			}
 
-			public Date getTime()
+			public String getTime()
 			{
 				return time;
 			}
 
-			public void setTime(Date value)
+			public void setTime(String value)
 			{
 				this.time = value;
 			}
 
-			public BigDecimal getMagvar()
+			public Double getMagvar()
 			{
 				return magvar;
 			}
 
-			public void setMagvar(BigDecimal value)
+			public void setMagvar(Double value)
 			{
 				this.magvar = value;
 			}
 
-			public BigDecimal getGeoidheight()
+			public Double getGeoidheight()
 			{
 				return geoidheight;
 			}
 
-			public void setGeoidheight(BigDecimal value)
+			public void setGeoidheight(Double value)
 			{
 				this.geoidheight = value;
 			}
@@ -430,52 +443,52 @@ public class Gpx
 				this.fix = value;
 			}
 
-			public BigInteger getSat()
+			public Integer getSat()
 			{
 				return sat;
 			}
 
-			public void setSat(BigInteger value)
+			public void setSat(Integer value)
 			{
 				this.sat = value;
 			}
 
-			public BigDecimal getHdop()
+			public Double getHdop()
 			{
 				return hdop;
 			}
 
-			public void setHdop(BigDecimal value)
+			public void setHdop(Double value)
 			{
 				this.hdop = value;
 			}
 
-			public BigDecimal getVdop()
+			public Double getVdop()
 			{
 				return vdop;
 			}
 
-			public void setVdop(BigDecimal value)
+			public void setVdop(Double value)
 			{
 				this.vdop = value;
 			}
 
-			public BigDecimal getPdop()
+			public Double getPdop()
 			{
 				return pdop;
 			}
 
-			public void setPdop(BigDecimal value)
+			public void setPdop(Double value)
 			{
 				this.pdop = value;
 			}
 
-			public BigDecimal getAgeofdgpsdata()
+			public Double getAgeofdgpsdata()
 			{
 				return ageofdgpsdata;
 			}
 
-			public void setAgeofdgpsdata(BigDecimal value)
+			public void setAgeofdgpsdata(Double value)
 			{
 				this.ageofdgpsdata = value;
 			}
@@ -490,22 +503,22 @@ public class Gpx
 				this.dgpsid = value;
 			}
 
-			public BigDecimal getLat()
+			public Double getLat()
 			{
 				return lat;
 			}
 
-			public void setLat(BigDecimal value)
+			public void setLat(Double value)
 			{
 				this.lat = value;
 			}
 
-			public BigDecimal getLon()
+			public Double getLon()
 			{
 				return lon;
 			}
 
-			public void setLon(BigDecimal value)
+			public void setLon(Double value)
 			{
 				this.lon = value;
 			}
@@ -524,13 +537,21 @@ public class Gpx
 	public static class Trk
 	{
 
+	    @Element(required=false)
 		protected String				name;
-		protected String				cmt;
-		protected String				desc;
-		protected String				src;
-		protected String				url;
-		protected String				urlname;
-		protected BigInteger			number;
+	    @Element(required=false)
+        protected String				cmt;
+	    @Element(required=false)
+        protected String				desc;
+	    @Element(required=false)
+        protected String				src;
+	    @Element(required=false)
+        protected String				url;
+	    @Element(required=false)
+        protected String				urlname;
+	    @Element(required=false)
+        protected Integer			number;
+		@ElementList(inline=true,required=false)
 		protected List<Gpx.Trk.Trkseg>	trkseg;
 
 		public String getName()
@@ -593,12 +614,12 @@ public class Gpx
 			this.urlname = value;
 		}
 
-		public BigInteger getNumber()
+		public Integer getNumber()
 		{
 			return number;
 		}
 
-		public void setNumber(BigInteger value)
+		public void setNumber(Integer value)
 		{
 			this.number = value;
 		}
@@ -615,6 +636,7 @@ public class Gpx
 		public static class Trkseg
 		{
 
+		    @ElementList(inline=true)
 			protected List<Gpx.Trk.Trkseg.Trkpt>	trkpt;
 
 			public List<Gpx.Trk.Trkseg.Trkpt> getTrkpt()
@@ -629,88 +651,109 @@ public class Gpx
 			public static class Trkpt
 			{
 
-				protected BigDecimal	ele;
-				protected Date			time;
-				protected BigDecimal	course;
-				protected BigDecimal	speed;
-				protected BigDecimal	magvar;
-				protected BigDecimal	geoidheight;
-				protected String		name;
-				protected String		cmt;
-				protected String		desc;
-				protected String		src;
-				protected String		url;
-				protected String		urlname;
-				protected String		sym;
-				protected String		type;
-				protected String		fix;
-				protected BigInteger	sat;
-				protected BigDecimal	hdop;
-				protected BigDecimal	vdop;
-				protected BigDecimal	pdop;
-				protected BigDecimal	ageofdgpsdata;
-				protected Integer		dgpsid;
+			    @Element(required=false)
+				protected Double	ele;
+			    @Element(required=false)
+                protected String			time;
+			    @Element(required=false)
+                protected Float	course;
+			    @Element(required=false)
+                protected Float	speed;
+			    @Element(required=false)
+                protected Double	magvar;
+			    @Element(required=false)
+                protected Double	geoidheight;
+			    @Element(required=false)
+                protected String		name;
+			    @Element(required=false)
+                protected String		cmt;
+			    @Element(required=false)
+                protected String		desc;
+			    @Element(required=false)
+                protected String		src;
+			    @Element(required=false)
+                protected String		url;
+			    @Element(required=false)
+                protected String		urlname;
+			    @Element(required=false)
+                protected String		sym;
+			    @Element(required=false)
+                protected String		type;
+			    @Element(required=false)
+                protected String		fix;
+			    @Element(required=false)
+                protected Integer	sat;
+			    @Element(required=false)
+                protected Double	hdop;
+			    @Element(required=false)
+                protected Double	vdop;
+			    @Element(required=false)
+                protected Double	pdop;
+			    @Element(required=false)
+                protected Double	ageofdgpsdata;
+			    @Element(required=false)
+                protected Integer		dgpsid;
 				@Attribute(required = true)
-				protected BigDecimal	lat;
+				protected Double	lat;
 				@Attribute(required = true)
-				protected BigDecimal	lon;
+				protected Double	lon;
 
-				public BigDecimal getEle()
+				public Double getEle()
 				{
 					return ele;
 				}
 
-				public void setEle(BigDecimal value)
+				public void setEle(Double value)
 				{
 					this.ele = value;
 				}
 
-				public Date getTime()
+				public String getTime()
 				{
 					return time;
 				}
 
-				public void setTime(Date value)
+				public void setTime(String dateTimeString)
 				{
-					this.time = value;
+					this.time = dateTimeString;
 				}
 
-				public BigDecimal getCourse()
+				public Float getCourse()
 				{
 					return course;
 				}
 
-				public void setCourse(BigDecimal value)
+				public void setCourse(Float f)
 				{
-					this.course = value;
+					this.course = f;
 				}
 
-				public BigDecimal getSpeed()
+				public Float getSpeed()
 				{
 					return speed;
 				}
 
-				public void setSpeed(BigDecimal value)
+				public void setSpeed(Float f)
 				{
-					this.speed = value;
+					this.speed = f;
 				}
 
-				public BigDecimal getMagvar()
+				public Double getMagvar()
 				{
 					return magvar;
 				}
 
-				public void setMagvar(BigDecimal value)
+				public void setMagvar(Double value)
 				{
 					this.magvar = value;
 				}
 
-				public BigDecimal getGeoidheight()
+				public Double getGeoidheight()
 				{
 					return geoidheight;
 				}
 
-				public void setGeoidheight(BigDecimal value)
+				public void setGeoidheight(Double value)
 				{
 					this.geoidheight = value;
 				}
@@ -805,52 +848,52 @@ public class Gpx
 					this.fix = value;
 				}
 
-				public BigInteger getSat()
+				public Integer getSat()
 				{
 					return sat;
 				}
 
-				public void setSat(BigInteger value)
+				public void setSat(Integer value)
 				{
 					this.sat = value;
 				}
 
-				public BigDecimal getHdop()
+				public Double getHdop()
 				{
 					return hdop;
 				}
 
-				public void setHdop(BigDecimal value)
+				public void setHdop(Double value)
 				{
 					this.hdop = value;
 				}
 
-				public BigDecimal getVdop()
+				public Double getVdop()
 				{
 					return vdop;
 				}
 
-				public void setVdop(BigDecimal value)
+				public void setVdop(Double value)
 				{
 					this.vdop = value;
 				}
 
-				public BigDecimal getPdop()
+				public Double getPdop()
 				{
 					return pdop;
 				}
 
-				public void setPdop(BigDecimal value)
+				public void setPdop(Double value)
 				{
 					this.pdop = value;
 				}
 
-				public BigDecimal getAgeofdgpsdata()
+				public Double getAgeofdgpsdata()
 				{
 					return ageofdgpsdata;
 				}
 
-				public void setAgeofdgpsdata(BigDecimal value)
+				public void setAgeofdgpsdata(Double value)
 				{
 					this.ageofdgpsdata = value;
 				}
@@ -865,22 +908,22 @@ public class Gpx
 					this.dgpsid = value;
 				}
 
-				public BigDecimal getLat()
+				public Double getLat()
 				{
 					return lat;
 				}
 
-				public void setLat(BigDecimal value)
+				public void setLat(Double value)
 				{
 					this.lat = value;
 				}
 
-				public BigDecimal getLon()
+				public Double getLon()
 				{
 					return lon;
 				}
 
-				public void setLon(BigDecimal value)
+				public void setLon(Double value)
 				{
 					this.lon = value;
 				}
@@ -917,10 +960,10 @@ public class Gpx
 	public static class Wpt
 	{
 
-		protected BigDecimal	ele;
-		protected Date			time;
-		protected BigDecimal	magvar;
-		protected BigDecimal	geoidheight;
+		protected Double	ele;
+		protected String	time;
+		protected Double	magvar;
+		protected Double	geoidheight;
 		protected String		name;
 		protected String		cmt;
 		protected String		desc;
@@ -930,53 +973,53 @@ public class Gpx
 		protected String		sym;
 		protected String		type;
 		protected String		fix;
-		protected BigInteger	sat;
-		protected BigDecimal	hdop;
-		protected BigDecimal	vdop;
-		protected BigDecimal	pdop;
-		protected BigDecimal	ageofdgpsdata;
+		protected Integer	sat;
+		protected Double	hdop;
+		protected Double	vdop;
+		protected Double	pdop;
+		protected Double	ageofdgpsdata;
 		protected Integer		dgpsid;
 		@Attribute(required = true)
-		protected BigDecimal	lat;
+		protected Double	lat;
 		@Attribute(required = true)
-		protected BigDecimal	lon;
+		protected Double	lon;
 
-		public BigDecimal getEle()
+		public Double getEle()
 		{
 			return ele;
 		}
 
-		public void setEle(BigDecimal value)
+		public void setEle(Double value)
 		{
 			this.ele = value;
 		}
 
-		public Date getTime()
+		public String getTime()
 		{
 			return time;
 		}
 
-		public void setTime(Date value)
+		public void setTime(String value)
 		{
 			this.time = value;
 		}
 
-		public BigDecimal getMagvar()
+		public Double getMagvar()
 		{
 			return magvar;
 		}
 
-		public void setMagvar(BigDecimal value)
+		public void setMagvar(Double value)
 		{
 			this.magvar = value;
 		}
 
-		public BigDecimal getGeoidheight()
+		public Double getGeoidheight()
 		{
 			return geoidheight;
 		}
 
-		public void setGeoidheight(BigDecimal value)
+		public void setGeoidheight(Double value)
 		{
 			this.geoidheight = value;
 		}
@@ -1071,52 +1114,52 @@ public class Gpx
 			this.fix = value;
 		}
 
-		public BigInteger getSat()
+		public Integer getSat()
 		{
 			return sat;
 		}
 
-		public void setSat(BigInteger value)
+		public void setSat(Integer value)
 		{
 			this.sat = value;
 		}
 
-		public BigDecimal getHdop()
+		public Double getHdop()
 		{
 			return hdop;
 		}
 
-		public void setHdop(BigDecimal value)
+		public void setHdop(Double value)
 		{
 			this.hdop = value;
 		}
 
-		public BigDecimal getVdop()
+		public Double getVdop()
 		{
 			return vdop;
 		}
 
-		public void setVdop(BigDecimal value)
+		public void setVdop(Double value)
 		{
 			this.vdop = value;
 		}
 
-		public BigDecimal getPdop()
+		public Double getPdop()
 		{
 			return pdop;
 		}
 
-		public void setPdop(BigDecimal value)
+		public void setPdop(Double value)
 		{
 			this.pdop = value;
 		}
 
-		public BigDecimal getAgeofdgpsdata()
+		public Double getAgeofdgpsdata()
 		{
 			return ageofdgpsdata;
 		}
 
-		public void setAgeofdgpsdata(BigDecimal value)
+		public void setAgeofdgpsdata(Double value)
 		{
 			this.ageofdgpsdata = value;
 		}
@@ -1131,22 +1174,22 @@ public class Gpx
 			this.dgpsid = value;
 		}
 
-		public BigDecimal getLat()
+		public Double getLat()
 		{
 			return lat;
 		}
 
-		public void setLat(BigDecimal value)
+		public void setLat(Double value)
 		{
 			this.lat = value;
 		}
 
-		public BigDecimal getLon()
+		public Double getLon()
 		{
 			return lon;
 		}
 
-		public void setLon(BigDecimal value)
+		public void setLon(Double value)
 		{
 			this.lon = value;
 		}

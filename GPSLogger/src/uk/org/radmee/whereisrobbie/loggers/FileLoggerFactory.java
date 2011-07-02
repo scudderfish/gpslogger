@@ -23,7 +23,7 @@ public class FileLoggerFactory
 		if (AppSettings.shouldLogToGpx())
 		{
 			File gpxFile = new File(gpxFolder.getPath(), Session.getCurrentFileName() + ".gpx");
-			loggers.add(new Gpx10FileLogger(gpxFile, AppSettings.shouldUseSatelliteTime(), Session.shouldAddNewTrackSegment()));
+			loggers.add(new Gpx11FileLogger(gpxFile, AppSettings.shouldUseSatelliteTime(), Session.shouldAddNewTrackSegment()));
 			Session.setAddNewTrackSegment(false);
 		}
 		

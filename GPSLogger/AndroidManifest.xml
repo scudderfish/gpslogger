@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="uk.org.radmee.whereisrobbie" android:versionCode="3"
-	android:versionName="2.0">
+	package="uk.org.radmee.whereisrobbie" android:versionCode="4"
+	android:versionName="2.1">
     <instrumentation android:name="android.test.InstrumentationTestRunner"
     android:targetPackage="uk.org.radmee.whereisrobbie"
     android:label="your tests label" />
