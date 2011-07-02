@@ -76,7 +76,7 @@ class Gpx11FileLogger implements IFileLogger
         }
         catch (Exception e)
         {
-            Utilities.LogError("Gpx10FileLogger.Write", e);
+            Utilities.LogError("Gpx11FileLogger.Write", e);
             throw new Exception("Could not write to GPX file");
 //          Log.e("Main", callingClient.getString(R.string.could_not_write_to_file) + e.getMessage());
 //          callingClient.SetStatus(callingClient.getString(R.string.could_not_write_to_file)
