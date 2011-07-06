@@ -15,3 +15,5 @@ DEPLOYMENT/
 KEYSTORE/
 images/
 ucdetector_reports/
+
+.DS_Store
