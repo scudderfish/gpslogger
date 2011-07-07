@@ -48,8 +48,10 @@ public class GpsLoggingService extends Service
 	// ---------------------------------------------------
 	private GeneralLocationListener gpsLocationListener;
 	private GeneralLocationListener towerLocationListener;
+	private GeneralLocationListener passiveLocationListener;
 	LocationManager gpsLocationManager;
 	private LocationManager towerLocationManager;
+	private LocationManager passiveLocationManager;
 
 	private Intent alarmIntent;
 
@@ -494,11 +496,18 @@ public class GpsLoggingService extends Service
 
 		gpsLocationListener = new GeneralLocationListener(this);
 		towerLocationListener = new GeneralLocationListener(this);
-
+		passiveLocationListener = new GeneralLocationListener(this);
+		
 		gpsLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		towerLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
+		passiveLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        
 		CheckTowerAndGpsStatus();
+
+		
+		passiveLocationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER,
+                AppSettings.getMinimumSeconds() * 1000, AppSettings.getMinimumDistance(),
+                passiveLocationListener);
 
 		if (Session.isGpsEnabled() && !AppSettings.shouldPreferCellTower())
 		{
@@ -563,7 +572,11 @@ public class GpsLoggingService extends Service
 			gpsLocationManager.removeUpdates(gpsLocationListener);
 			gpsLocationManager.removeGpsStatusListener(gpsLocationListener);
 		}
-
+		if(passiveLocationListener!= null)
+		{
+		    passiveLocationManager.removeUpdates(passiveLocationListener);
+		}
+		
 		SetStatus(getString(R.string.stopped));
 	}
 

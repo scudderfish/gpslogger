@@ -10,9 +10,13 @@ import android.os.Environment;
 
 public class FileLoggerFactory
 {
-	public static List<IFileLogger> GetFileLoggers()
+	private static final Gpx11FileLogger GPX11_FILE_LOGGER = new Gpx11FileLogger(null, true, true);
+
+    public static List<IFileLogger> GetFileLoggers()
 	{
-		File gpxFolder = new File(Environment.getExternalStorageDirectory(), "GPSLogger");
+
+        
+        File gpxFolder = new File(Environment.getExternalStorageDirectory(), "GPSLogger");
 		if (!gpxFolder.exists())
 		{
 			gpxFolder.mkdirs();
@@ -20,11 +24,17 @@ public class FileLoggerFactory
 		
 		List<IFileLogger> loggers = new ArrayList<IFileLogger>();
 		
-		if (AppSettings.shouldLogToGpx())
+        if(AppSettings.isLogToURL())
+        {
+            loggers.add(new URLLogger());
+        }
+
+        if (AppSettings.shouldLogToGpx())
 		{
 			File gpxFile = new File(gpxFolder.getPath(), Session.getCurrentFileName() + ".gpx");
-			loggers.add(new Gpx11FileLogger(gpxFile, AppSettings.shouldUseSatelliteTime(), Session.shouldAddNewTrackSegment()));
-			Session.setAddNewTrackSegment(false);
+			GPX11_FILE_LOGGER.setFile(gpxFile);
+			loggers.add(GPX11_FILE_LOGGER);
+			
 		}
 		
 		if(AppSettings.shouldLogToKml())
@@ -33,10 +43,6 @@ public class FileLoggerFactory
 			loggers.add(new Kml10FileLogger(kmlFile, AppSettings.shouldUseSatelliteTime()));
 		}
 		
-		if(AppSettings.isLogToURL())
-		{
-			loggers.add(new URLLogger());
-		}
 		return loggers;
 	}
 }
